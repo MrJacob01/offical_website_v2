@@ -148,16 +148,14 @@ const Header = () => {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-white/90 backdrop-blur-sm'}`}>
       {/* Main Navigation Bar */}
       <div className="border-b border-gray-100/50">
-        <div className="max-w-7xl mx-auto px-4 lg:px-6 py-3 lg:py-4">
+        <div className="max-w-9xl mx-auto px-4 lg:px-10 py-3 lg:py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <a href="/" className="flex items-center gap-2 lg:gap-3 group">
-              <div className="w-8 h-8 lg:w-10 lg:h-10 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-lg lg:rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
-                <span className="text-white font-bold text-sm lg:text-lg">A</span>
-              </div>
+                <img src="/images.png" alt="O'zMMI Logo" className="w-20 h-20 bg-black" />
               <span className="font-bold text-xl lg:text-2xl">
-                <span className="text-slate-800">Aloqa</span>
-                <span className="text-blue-600">Bank</span>
+                <span className="text-blue-500 font-italic">O'zbekiston Milliy</span>
+                <h1 className="text-blue-500 text-italic"> Metrologiya Instituti</h1>
               </span>
             </a>
 
@@ -218,7 +216,7 @@ const Header = () => {
 
       {/* Secondary Navigation Bar - Desktop Only */}
       <div className="hidden lg:block bg-slate-50/80 backdrop-blur-sm border-b border-gray-100/50">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-9xl mx-auto px-10">
           <div className="flex items-center justify-between">
             {/* Secondary Menu */}
             <nav className="flex items-center">
@@ -318,6 +316,31 @@ const Header = () => {
     </header>
   );
 };
+
+// Responsive container utility
+const ResponsiveContainer = ({ children }) => (
+  <div className="
+    mx-auto
+    px-2
+    sm:px-4
+    md:px-6
+    lg:px-8
+    xl:px-12
+    2xl:px-20
+    3xl:px-32
+    4xl:px-48
+    max-w-screen-sm
+    sm:max-w-screen-md
+    md:max-w-screen-lg
+    lg:max-w-screen-xl
+    xl:max-w-[1600px]
+    2xl:max-w-[2000px]
+    3xl:max-w-[3000px]
+    4xl:max-w-[3840px]
+  ">
+    {children}
+  </div>
+);
 
 // Enhanced Background Animation Component with Full Coverage
 const BackgroundAnimation = ({ variant = "default" }) => {
@@ -574,17 +597,22 @@ const Hero = () => {
 
       <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] -z-10"></div>
       
-      <div className="max-w-7xl mx-auto px-6 pt-8 lg:pt-0 relative z-10">
+      <ResponsiveContainer>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-[600px]">
           {/* Left Content */}
-          <div className="space-y-8">
-            <div className="inline-flex items-center px-4 py-2 bg-blue-100/80 text-blue-700 rounded-full text-sm font-semibold backdrop-blur-sm">
-              <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></span>
-              KREDITLAR
-            </div>
-            
+          <div className="space-y-4">
             <div className="space-y-6">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 leading-[1.1] tracking-tight">
+              <h1 className="
+                text-3xl
+                sm:text-4xl
+                md:text-5xl
+                lg:text-6xl
+                xl:text-7xl
+                2xl:text-8xl
+                3xl:text-9xl
+                4xl:text-[7rem]
+                font-bold text-slate-900 leading-[1.1] tracking-tight
+              ">
                 Onlayn
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
                   «Mikroqarz»
@@ -650,7 +678,7 @@ const Hero = () => {
               <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full opacity-60 blur-xl"></div>
               <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-emerald-400 to-blue-500 rounded-full opacity-40 blur-2xl"></div>
             </div>
-      </div>
+      </ResponsiveContainer>
     </section>
   );
 };
@@ -710,7 +738,7 @@ const ProductCards = () => {
       {/* Background Animation */}
       <BackgroundAnimation variant="products" />
       
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <ResponsiveContainer>
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
             Bizning <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">mahsulotlarimiz</span>
@@ -784,7 +812,7 @@ const ProductCards = () => {
             </div>
           ))}
         </div>
-      </div>
+      </ResponsiveContainer>
     </section>
   );
 };
@@ -857,7 +885,7 @@ const MobileAppSection = () => {
         </div>
       </div>
 
-      <div className="max-w-[1600px] 2xl:max-w-[1800px] mx-auto px-6 xl:px-8 2xl:px-12 relative z-10">
+      <ResponsiveContainer>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 xl:gap-24 items-center">
           
           {/* Left Content - Features */}
@@ -1124,7 +1152,7 @@ const MobileAppSection = () => {
             <div className="absolute top-1/2 -right-6 w-24 h-24 bg-teal-300/25 rounded-full blur-xl animate-bounce"></div>
           </div>
         </div>
-      </div>
+      </ResponsiveContainer>
     </section>
   );
 };
@@ -1145,7 +1173,7 @@ const Services = () => {
         <div className="absolute top-3/4 left-1/3 w-1 h-1 bg-cyan-400/30 rounded-full animate-twinkle delay-500"></div>
       </div>
       
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <ResponsiveContainer>
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Bizning <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">yutuqlarimiz</span>
@@ -1173,7 +1201,7 @@ const Services = () => {
             );
           })}
         </div>
-      </div>
+      </ResponsiveContainer>
     </section>
   );
 };
@@ -1185,7 +1213,7 @@ const NewsSection = () => {
       {/* Default Background Animation */}
       <BackgroundAnimation />
       
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <ResponsiveContainer>
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 gap-6">
           <div>
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
@@ -1229,7 +1257,7 @@ const NewsSection = () => {
             </div>
           ))}
         </div>
-      </div>
+      </ResponsiveContainer>
     </section>
   );
 };
@@ -1247,7 +1275,7 @@ const Footer = () => {
         <div className="absolute top-3/4 left-1/3 w-1 h-1 bg-cyan-400/30 rounded-full animate-twinkle delay-500"></div>
       </div>
       
-      <div className="max-w-7xl mx-auto px-6 py-16 relative z-10">
+      <ResponsiveContainer>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* About */}
           <div className="lg:col-span-2">
@@ -1341,7 +1369,7 @@ const Footer = () => {
             ))}
           </div>
         </div>
-      </div>
+      </ResponsiveContainer>
     </footer>
   );
 };
